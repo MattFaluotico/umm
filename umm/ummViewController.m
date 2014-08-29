@@ -20,13 +20,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.layer.cornerRadius = 5;
+    
     self.runningTotal = [[NSUserDefaults standardUserDefaults] integerForKey:@"total"];
     NSLog(@"%i", self.runningTotal);
     
     self.addButton.layer.cornerRadius = self.addButton.frame.size.width / 2.0;
     self.addButton.backgroundColor = [UIColor colorWithRed:0.24 green:0 blue:1 alpha:1];
     [self.addButton setTintColor:[UIColor whiteColor]];
-    [self.addButton setTitle:@"+" forState:UIControlStateNormal];
+    [self.addButton setTitle:@"umm" forState:UIControlStateNormal];
     self.addButton.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     
     self.endButton.layer.cornerRadius = self.endButton.frame.size.width / 2.0;
@@ -37,6 +39,7 @@
     
     [self.endButton addTarget:self action:@selector(endTimer) forControlEvents:UIControlEventTouchUpInside];
     
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"debut_light.png"]];
     self.countLabel.text = [NSString stringWithFormat:@"%i", self.runningTotal];
     self.endButton.alpha = 0;
 }
