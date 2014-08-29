@@ -7,12 +7,18 @@
 //
 
 #import "ummAppDelegate.h"
+#import "ummViewController.h"
 
 @implementation ummAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"timerIsRunning"]) {
+        ummViewController *view = (ummViewController*)self.window.rootViewController;
+        [view populate];
+    }
+    
     return YES;
 }
 							
@@ -24,8 +30,8 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    ummViewController *view = (ummViewController*)self.window.rootViewController;
+    [view postpone];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application

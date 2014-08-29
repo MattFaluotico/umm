@@ -15,4 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *countLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
+- (void) postpone;
+
+- (void) populate;
+
 @end
