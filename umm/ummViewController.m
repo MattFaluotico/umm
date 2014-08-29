@@ -33,7 +33,7 @@
     self.endButton.backgroundColor = [UIColor colorWithRed:0.59 green:0 blue:0 alpha:1];
     
     [self.addButton addTarget:self action:@selector(add) forControlEvents:UIControlEventTouchUpInside];
-    [self.addButton addTarget:self action:@selector(animate) forControlEvents:UIControlEventTouchDown];
+    [self.addButton addTarget:self action:@selector(animateCounterButtonPush) forControlEvents:UIControlEventTouchDown];
     
     [self.endButton addTarget:self action:@selector(endTimer) forControlEvents:UIControlEventTouchUpInside];
     
@@ -49,7 +49,43 @@
 
 #pragma mark - Events
 
-- (void) animate {
+- (void) add {
+    
+    if (self.runningTotal == 0) {
+        [self animateTimerButtonIn];
+    }
+    
+    self.runningTotal++;
+    self.countLabel.text = [NSString stringWithFormat:@"%i", self.runningTotal];
+    [self animateCountIncrease];
+    
+    // slightly shrink the button,
+    // but pop the addition
+}
+
+- (void) endTimer {
+    [self animateTimerButtonOut];
+}
+
+- (void) viewDidDisappear:(BOOL)animated {
+    [[NSUserDefaults standardUserDefaults] setInteger:self.runningTotal forKey:@"sum"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+#pragma mark - POP Animation
+
+- (void) animateCountIncrease {
+    POPSpringAnimation *anim = [POPSpringAnimation animation];
+    anim.property = [POPAnimatableProperty propertyWithName:kPOPViewScaleXY];
+    anim.fromValue  = [NSValue valueWithCGSize:CGSizeMake(0.0, 0.0f)];
+    anim.toValue  = [NSValue valueWithCGSize:CGSizeMake(1.0f, 1.0f)];//@(0.0f);
+    anim.springBounciness = 20.0f;
+    anim.springSpeed = 20.0f;
+
+    [self.countLabel pop_addAnimation:anim forKey:@"pop"];
+}
+
+- (void) animateCounterButtonPush {
     POPSpringAnimation *anim = [POPSpringAnimation animation];
     anim.property = [POPAnimatableProperty propertyWithName:kPOPViewScaleXY];
     anim.fromValue  = [NSValue valueWithCGSize:CGSizeMake(0.95, 0.95)];
@@ -59,44 +95,24 @@
     [self.addButton pop_addAnimation:anim forKey:@"pop"];
 }
 
-- (void) add {
-    
-    if (self.runningTotal == 0) {
-        
-        POPSpringAnimation *anim = [POPSpringAnimation animation];
-        anim.property = [POPAnimatableProperty propertyWithName:kPOPViewScaleXY];
-        anim.fromValue =[NSValue valueWithCGSize:CGSizeMake(0, 0)];
-        anim.toValue =[NSValue valueWithCGSize:CGSizeMake(1, 1)];
-        anim.springBounciness = 20.0f;
-        anim.springSpeed = 20.0f;
-        POPSpringAnimation *al = [POPSpringAnimation animation];
-        al.property = [POPAnimatableProperty propertyWithName:kPOPViewAlpha];
-        al.fromValue =[NSValue valueWithCGSize:CGSizeMake(0, 0)];
-        al.toValue =[NSValue valueWithCGSize:CGSizeMake(1, 1)];
-        al.springBounciness = 20.0f;
-        al.springSpeed = 20.0f;
-        [self.endButton pop_addAnimation:anim forKey:@"pop"];
-        [self.endButton pop_addAnimation:al forKey:@"pop2"];
-        
-    }
-    
-    self.runningTotal++;
-    
+- (void) animateTimerButtonIn {
     POPSpringAnimation *anim = [POPSpringAnimation animation];
     anim.property = [POPAnimatableProperty propertyWithName:kPOPViewScaleXY];
-    anim.fromValue  = [NSValue valueWithCGSize:CGSizeMake(0.0, 0.0f)];
-    anim.toValue  = [NSValue valueWithCGSize:CGSizeMake(1.0f, 1.0f)];//@(0.0f);
+    anim.fromValue =[NSValue valueWithCGSize:CGSizeMake(0, 0)];
+    anim.toValue =[NSValue valueWithCGSize:CGSizeMake(1, 1)];
     anim.springBounciness = 20.0f;
     anim.springSpeed = 20.0f;
-    self.countLabel.text = [NSString stringWithFormat:@"%i", self.runningTotal];
-    [self.countLabel pop_addAnimation:anim forKey:@"pop"];
-    
-    
-    // slightly shrink the button,
-    // but pop the addition
+    POPSpringAnimation *al = [POPSpringAnimation animation];
+    al.property = [POPAnimatableProperty propertyWithName:kPOPViewAlpha];
+    al.fromValue =[NSValue valueWithCGSize:CGSizeMake(0, 0)];
+    al.toValue =[NSValue valueWithCGSize:CGSizeMake(1, 1)];
+    al.springBounciness = 20.0f;
+    al.springSpeed = 20.0f;
+    [self.endButton pop_addAnimation:anim forKey:@"pop"];
+    [self.endButton pop_addAnimation:al forKey:@"pop2"];
 }
 
-- (void) endTimer {
+- (void) animateTimerButtonOut {
     POPSpringAnimation *anim = [POPSpringAnimation animation];
     anim.property = [POPAnimatableProperty propertyWithName:kPOPViewScaleXY];
     anim.fromValue =[NSValue valueWithCGSize:CGSizeMake(1.1, 1.1)];
@@ -111,29 +127,6 @@
     al.springSpeed = 20.0f;
     [self.endButton pop_addAnimation:anim forKey:@"pop"];
     [self.endButton pop_addAnimation:al forKey:@"pop2"];
-}
-
-- (void) viewDidDisappear:(BOOL)animated {
-    [[NSUserDefaults standardUserDefaults] setInteger:self.runningTotal forKey:@"sum"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-#pragma mark - POP Animation
-
-- (void) animateCountIncrease {
-    
-}
-
-- (void) animateCounterButtonPush {
-    
-}
-
-- (void) animateTimerButtonIn {
-    
-}
-
-- (void) animateTimerButtonOut {
-    
 }
 
 
