@@ -57,6 +57,7 @@
 - (void) add {
     
     if (self.runningTotal == 0) {
+        [self resetEndButton];
         [self animateTimerButtonIn];
         self.seconds = 0;
         self.timerIsRunning = YES;
@@ -64,6 +65,7 @@
     }
     
     if (!self.timerIsRunning) {
+        [self resetEndButton];
         [self animateTimerButtonIn];
         self.seconds = 0;
         self.runningTotal = 0;
@@ -81,7 +83,11 @@
 
 - (void) endTimer {
     
+
     if (self.timerIsRunning) {
+        
+        NSLog(@"Timer is running");
+
         self.timerIsRunning = NO;
         [self animateTimerButtonToShareButton];
         [self.timer invalidate];
@@ -95,6 +101,7 @@
 - (void) populate {
     
     self.timerIsRunning = YES;
+//    self.timer = nil;
     self.timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateTimer) userInfo:nil repeats: YES];
     self.seconds = [[NSDate date] timeIntervalSinceDate:[[NSUserDefaults standardUserDefaults] objectForKey:@"startTime"]];
     self.runningTotal = [[NSUserDefaults standardUserDefaults] integerForKey:@"total"];
@@ -105,6 +112,9 @@
 - (void) postpone {
     
     NSLog(@"hold up...");
+    
+    [self.timer invalidate];
+    self.timer = nil;
     
     [[NSUserDefaults standardUserDefaults] setInteger:self.runningTotal forKey:@"total"];
     [[NSUserDefaults standardUserDefaults] setBool:self.timerIsRunning forKey:@"timerIsRunning"];
@@ -118,6 +128,9 @@
 }
 
 - (void) updateTimer {
+    
+    NSLog(@"%@", self.timer);
+    
     int hours, minutes, seconds;
     self.seconds++;
     hours = self.seconds / 3600;
@@ -128,6 +141,9 @@
 
 - (void) resetEndButton {
     
+    CGRect size = self.endButton.frame;
+    size.size = CGSizeMake(40, 40);
+    self.endButton.frame = size;
     self.endButton.layer.cornerRadius = 20;
     self.endButton.backgroundColor = [UIColor colorWithRed:0.59 green:0 blue:0 alpha:1];
     [self.endButton setTitle:@"X" forState:UIControlStateNormal];
@@ -150,7 +166,7 @@
 - (NSString*) messageBody {
     NSString *message = @"";
     
-    message = [NSString stringWithFormat:@"You said 'umm' %li times in ", (long)self.runningTotal ];
+    message = [NSString stringWithFormat:@"You said 'umm' %li times in", (long)self.runningTotal ];
     
     int hours, minutes, seconds;
     self.seconds++;
@@ -161,15 +177,15 @@
     if (hours == 0) {
         
         if (minutes == 0) {
-           message = [NSString stringWithFormat:@"%@ %02d seconds", message, seconds];
+           message = [NSString stringWithFormat:@"%@ %2d seconds", message, seconds];
         } else {
-            message = [NSString stringWithFormat:@"%@ %02d minutes and %02d seconds",message,minutes, seconds];
+            message = [NSString stringWithFormat:@"%@ %2d minutes and %2d seconds",message,minutes, seconds];
         }
         
     } else if (minutes == 0) {
-       message = [NSString stringWithFormat:@"%@ %02d seconds", message, seconds];
+       message = [NSString stringWithFormat:@"%@ %2d seconds", message, seconds];
     } else {
-       message = [NSString stringWithFormat:@"%@ %02d hours, %02d minutes, and %02d seconds", message, hours, minutes, seconds];
+       message = [NSString stringWithFormat:@"%@ %2d hours, %2d minutes, and %2d seconds", message, hours, minutes, seconds];
     }
     
     

@@ -11,15 +11,10 @@
 
 @implementation ummAppDelegate
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"timerIsRunning"]) {
-        ummViewController *view = (ummViewController*)self.window.rootViewController;
-        [view populate];
-    }
-    
-    return YES;
+        return YES;
 }
 							
 - (void)applicationDidEnterBackground:(UIApplication *)application
@@ -34,6 +29,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+    NSLog(@"Active");
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"timerIsRunning"]) {
         ummViewController *view = (ummViewController*)self.window.rootViewController;
         [view populate];

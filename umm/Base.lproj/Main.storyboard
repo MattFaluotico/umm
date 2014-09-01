@@ -26,8 +26,8 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="73"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPR-N9-nsf">
-                                <rect key="frame" x="140" y="508" width="40" height="40"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPR-N9-nsf">
+                                <rect key="frame" x="140" y="511" width="40" height="40"/>
                                 <color key="backgroundColor" red="0.59188179350000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="HTJ-3G-5oL"/>
@@ -64,6 +64,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="bch-qf-jST" secondAttribute="centerX" id="3jU-EG-eEe"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="hPR-N9-nsf" secondAttribute="bottom" constant="16.5" id="9L0-lt-Ks6"/>
                             <constraint firstAttribute="centerX" secondItem="hPR-N9-nsf" secondAttribute="centerX" id="AnF-ml-87Z"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="59U-MJ-ihv" secondAttribute="bottom" constant="80" id="EjF-e8-x40"/>
                             <constraint firstItem="bch-qf-jST" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="87" id="OLD-Pc-Ndw"/>
