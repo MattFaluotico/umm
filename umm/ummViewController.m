@@ -28,9 +28,8 @@
 
 
     self.addButton.layer.cornerRadius = self.addButton.frame.size.width / 2.0;
-    self.addButton.backgroundColor = [UIColor colorWithRed:0.24 green:0 blue:1 alpha:1];
+//    self.addButton.backgroundColor = [UIColor colorWithRed:0.24 green:0 blue:1 alpha:1];
     [self.addButton setTintColor:[UIColor whiteColor]];
-    [self.addButton setTitle:@"umm" forState:UIControlStateNormal];
     self.addButton.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     
     self.endButton.layer.cornerRadius = self.endButton.frame.size.width / 2.0;
@@ -65,6 +64,7 @@
     }
     
     if (!self.timerIsRunning) {
+        [self animateTimerButtonIn];
         self.seconds = 0;
         self.runningTotal = 0;
         self.timerIsRunning = YES;
@@ -80,9 +80,16 @@
 }
 
 - (void) endTimer {
-    self.timerIsRunning = NO;
-    [self animateTimerButtonOut];
-    [self.timer invalidate];
+    
+    if (self.timerIsRunning) {
+        self.timerIsRunning = NO;
+        [self animateTimerButtonToShareButton];
+        [self.timer invalidate];
+        self.timer = nil;
+    } else {
+        [self share];
+    }
+    
 }
 
 - (void) populate {
@@ -117,6 +124,56 @@
     minutes = (self.seconds % 3600) / 60;
     seconds = (self.seconds %3600) % 60;
     self.timeLabel.text = [NSString stringWithFormat:@"%02d:%02d:%02d", hours, minutes, seconds];
+}
+
+- (void) resetEndButton {
+    
+    self.endButton.layer.cornerRadius = 20;
+    self.endButton.backgroundColor = [UIColor colorWithRed:0.59 green:0 blue:0 alpha:1];
+    [self.endButton setTitle:@"X" forState:UIControlStateNormal];
+    self.endButton.alpha = 0;
+
+}
+
+- (void) share {
+
+    MFMailComposeViewController *mailcomposer = [[MFMailComposeViewController alloc] init];
+    mailcomposer.mailComposeDelegate = self;
+    [mailcomposer setSubject:@"Just so you know..."];
+    [mailcomposer setMessageBody:[self messageBody] isHTML:NO];
+    [self presentViewController:mailcomposer animated:YES completion:^{
+        [self resetEndButton];
+    }];
+    
+}
+
+- (NSString*) messageBody {
+    NSString *message = @"";
+    
+    message = [NSString stringWithFormat:@"You said 'umm' %li times in ", (long)self.runningTotal ];
+    
+    int hours, minutes, seconds;
+    self.seconds++;
+    hours = self.seconds / 3600;
+    minutes = (self.seconds % 3600) / 60;
+    seconds = (self.seconds %3600) % 60;
+    
+    if (hours == 0) {
+        
+        if (minutes == 0) {
+           message = [NSString stringWithFormat:@"%@ %02d seconds", message, seconds];
+        } else {
+            message = [NSString stringWithFormat:@"%@ %02d minutes and %02d seconds",message,minutes, seconds];
+        }
+        
+    } else if (minutes == 0) {
+       message = [NSString stringWithFormat:@"%@ %02d seconds", message, seconds];
+    } else {
+       message = [NSString stringWithFormat:@"%@ %02d hours, %02d minutes, and %02d seconds", message, hours, minutes, seconds];
+    }
+    
+    
+    return message;
 }
 
 #pragma mark - POP Animation
@@ -159,22 +216,41 @@
     [self.endButton pop_addAnimation:al forKey:@"pop2"];
 }
 
-- (void) animateTimerButtonOut {
-    POPSpringAnimation *anim = [POPSpringAnimation animation];
-    anim.property = [POPAnimatableProperty propertyWithName:kPOPViewScaleXY];
-    anim.fromValue =[NSValue valueWithCGSize:CGSizeMake(1.1, 1.1)];
-    anim.toValue =[NSValue valueWithCGSize:CGSizeMake(0, 0)];
-    anim.springBounciness = 20.0f;
-    anim.springSpeed = 10.0f;
-    POPSpringAnimation *al = [POPSpringAnimation animation];
-    al.property = [POPAnimatableProperty propertyWithName:kPOPViewAlpha];
-    al.fromValue =[NSValue valueWithCGSize:CGSizeMake(1, 1)];
-    al.toValue =[NSValue valueWithCGSize:CGSizeMake(0, 0)];
-    al.springBounciness = 20.0f;
-    al.springSpeed = 20.0f;
-    [self.endButton pop_addAnimation:anim forKey:@"pop"];
-    [self.endButton pop_addAnimation:al forKey:@"pop2"];
+- (void) animateTimerButtonToShareButton {
+    
+//    [self.addButton setTitle:@"start" forState:UIControlStateNormal];
+    
+    POPSpringAnimation *bounds = [POPSpringAnimation animation];
+    bounds.property = [POPAnimatableProperty propertyWithName:kPOPViewBounds];
+    bounds.toValue = [NSValue valueWithCGRect:CGRectMake(0, 0, 90, 40)];
+    [self.endButton pop_addAnimation:bounds forKey:@"bounds"];
+    
+    POPBasicAnimation *color = [POPBasicAnimation animation];
+    color.property = [POPAnimatableProperty propertyWithName:kPOPViewBackgroundColor];
+    color.toValue = [UIColor colorWithRed:0.17 green:0.73 blue:0.23 alpha:1];
+    [self.endButton pop_addAnimation:color forKey:@"color"];
+    
+    POPSpringAnimation *corners = [POPSpringAnimation animation];
+    corners.property = [POPAnimatableProperty propertyWithName:kPOPLayerCornerRadius];
+    corners.toValue = @(0);
+    [self.endButton.layer pop_addAnimation:corners forKey:@"corners"];
+    
+    [self performSelector:@selector(setEndButtonText) withObject:nil afterDelay:0.3];
+    
+    
+
 }
 
+#pragma Mark - Selectors and Delegates
+
+- (void) setEndButtonText {
+    
+        [self.endButton setTitle:@"Tell Them" forState:UIControlStateNormal];
+}
+
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

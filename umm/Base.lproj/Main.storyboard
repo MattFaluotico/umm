@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Umm View Controller-->
@@ -17,35 +17,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUN-uT-4El">
-                                <rect key="frame" x="58" y="22" width="204" height="74"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="50"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUN-uT-4El">
+                                <rect key="frame" x="35" y="28" width="251" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="94" id="9uQ-qa-mTE"/>
+                                    <constraint firstAttribute="width" constant="251" id="FDz-U6-58D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="73"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPR-N9-nsf">
-                                <rect key="frame" x="145" y="518" width="30" height="30"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPR-N9-nsf">
+                                <rect key="frame" x="140" y="508" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.59188179350000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="YlK-tT-yOW"/>
-                                    <constraint firstAttribute="height" constant="30" id="n06-QV-ZOj"/>
+                                    <constraint firstAttribute="width" constant="40" id="HTJ-3G-5oL"/>
+                                    <constraint firstAttribute="height" constant="40" id="exk-zc-MvX"/>
                                 </constraints>
-                                <state key="normal" image="x">
+                                <state key="normal" title="X">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59U-MJ-ihv">
-                                <rect key="frame" x="110" y="403" width="100" height="100"/>
+                                <rect key="frame" x="98" y="363" width="125" height="125"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="BS2-ug-mnK"/>
-                                    <constraint firstAttribute="height" constant="100" id="X77-Rv-h6U"/>
+                                    <constraint firstAttribute="height" constant="125" id="RSv-vz-rBw"/>
+                                    <constraint firstAttribute="width" constant="125" id="VAL-CG-K0e"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" image="ummButton">
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="34"/>
+                                <state key="normal" title="Umm.">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bch-qf-jST">
-                                <rect key="frame" x="85" y="102" width="150" height="45"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bch-qf-jST">
+                                <rect key="frame" x="85" y="107" width="150" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="FFs-Tv-jCr"/>
+                                    <constraint firstAttribute="width" constant="150" id="Msy-JI-TpT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -53,10 +63,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="59U-MJ-ihv" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="110" id="Q2C-V6-r17"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="hPR-N9-nsf" secondAttribute="bottom" constant="20" id="ciF-HT-u8Z"/>
-                            <constraint firstAttribute="trailing" secondItem="59U-MJ-ihv" secondAttribute="trailing" constant="110" id="nGT-Ws-1li"/>
-                            <constraint firstItem="hPR-N9-nsf" firstAttribute="top" secondItem="59U-MJ-ihv" secondAttribute="bottom" constant="15" id="qnF-Rm-2Vo"/>
+                            <constraint firstAttribute="centerX" secondItem="bch-qf-jST" secondAttribute="centerX" id="3jU-EG-eEe"/>
+                            <constraint firstAttribute="centerX" secondItem="hPR-N9-nsf" secondAttribute="centerX" id="AnF-ml-87Z"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="59U-MJ-ihv" secondAttribute="bottom" constant="80" id="EjF-e8-x40"/>
+                            <constraint firstItem="bch-qf-jST" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="87" id="OLD-Pc-Ndw"/>
+                            <constraint firstAttribute="centerX" secondItem="59U-MJ-ihv" secondAttribute="centerX" id="prd-lo-ngv"/>
+                            <constraint firstAttribute="centerX" secondItem="tUN-uT-4El" secondAttribute="centerX" id="rJ9-Rc-g4e"/>
+                            <constraint firstItem="tUN-uT-4El" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="zEh-cC-Mz6"/>
                         </constraints>
                     </view>
                     <connections>
@@ -68,19 +81,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="219" y="144"/>
+            <point key="canvasLocation" x="172" y="136"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="ummButton" width="100" height="100"/>
-        <image name="x" width="30" height="30"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4">
-            <size key="portraitSize" width="320" height="568"/>
-            <size key="landscapeSize" width="568" height="320"/>
-        </simulatedScreenMetrics>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
 </document>
