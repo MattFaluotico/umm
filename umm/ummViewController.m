@@ -24,9 +24,6 @@
     
     [super viewDidLoad];
     
-    self.view.layer.cornerRadius = 5;
-
-
     self.addButton.layer.cornerRadius = self.addButton.frame.size.width / 2.0;
 //    self.addButton.backgroundColor = [UIColor colorWithRed:0.24 green:0 blue:1 alpha:1];
     [self.addButton setTintColor:[UIColor whiteColor]];
@@ -197,9 +194,9 @@
 - (void) animateCountIncrease {
     POPSpringAnimation *anim = [POPSpringAnimation animation];
     anim.property = [POPAnimatableProperty propertyWithName:kPOPViewScaleXY];
-    anim.fromValue  = [NSValue valueWithCGSize:CGSizeMake(0.0, 0.0f)];
+    anim.fromValue  = [NSValue valueWithCGSize:CGSizeMake(0.3f, 0.3f)];
     anim.toValue  = [NSValue valueWithCGSize:CGSizeMake(1.0f, 1.0f)];//@(0.0f);
-    anim.springBounciness = 20.0f;
+    anim.springBounciness = 10.0f;
     anim.springSpeed = 20.0f;
 
     [self.countLabel pop_addAnimation:anim forKey:@"pop"];
@@ -238,7 +235,7 @@
     
     POPSpringAnimation *bounds = [POPSpringAnimation animation];
     bounds.property = [POPAnimatableProperty propertyWithName:kPOPViewBounds];
-    bounds.toValue = [NSValue valueWithCGRect:CGRectMake(0, 0, 90, 40)];
+    bounds.toValue = [NSValue valueWithCGRect:CGRectMake(0, 0, 100, 40)];
     [self.endButton pop_addAnimation:bounds forKey:@"bounds"];
     
     POPBasicAnimation *color = [POPBasicAnimation animation];
@@ -248,13 +245,10 @@
     
     POPSpringAnimation *corners = [POPSpringAnimation animation];
     corners.property = [POPAnimatableProperty propertyWithName:kPOPLayerCornerRadius];
-    corners.toValue = @(0);
+    corners.toValue = @(5);
     [self.endButton.layer pop_addAnimation:corners forKey:@"corners"];
     
     [self performSelector:@selector(setEndButtonText) withObject:nil afterDelay:0.3];
-    
-    
-
 }
 
 #pragma Mark - Selectors and Delegates
