@@ -1,4 +1,4 @@
 umm
 ===
 
-Because people need to learn how to publicly speak
+I wanted to try out Facebook Pop as I listened to a poor presentation. 
