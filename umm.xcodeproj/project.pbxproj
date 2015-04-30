@@ -16,12 +16,19 @@
 		33A0B95819B00B890028657B /* ummAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A0B95719B00B890028657B /* ummAppDelegate.m */; };
 		33A0B95B19B00B890028657B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33A0B95919B00B890028657B /* Main.storyboard */; };
 		33A0B95E19B00B890028657B /* ummViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A0B95D19B00B890028657B /* ummViewController.m */; };
-		33A0B96019B00B890028657B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33A0B95F19B00B890028657B /* Images.xcassets */; };
 		33A0B96719B00B890028657B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A0B96619B00B890028657B /* XCTest.framework */; };
 		33A0B96819B00B890028657B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A0B94719B00B890028657B /* Foundation.framework */; };
 		33A0B96919B00B890028657B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A0B94B19B00B890028657B /* UIKit.framework */; };
 		33A0B97119B00B890028657B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 33A0B96F19B00B890028657B /* InfoPlist.strings */; };
 		33A0B97319B00B890028657B /* ummTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A0B97219B00B890028657B /* ummTests.m */; };
+		AC6179571AF29DF900FD7A2B /* StopWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6179561AF29DF900FD7A2B /* StopWatch.m */; };
+		AC6179591AF29E5400FD7A2B /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC6179581AF29E5400FD7A2B /* Launch Screen.xib */; };
+		AC61795B1AF29EF200FD7A2B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC61795A1AF29EF200FD7A2B /* Images.xcassets */; };
+		AC6179601AF2A22100FD7A2B /* ToolbarNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC61795F1AF2A22100FD7A2B /* ToolbarNavViewController.m */; };
+		AC6179631AF2BDE600FD7A2B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6179621AF2BDE600FD7A2B /* HomeViewController.m */; };
+		AC6179661AF2C11D00FD7A2B /* FadeSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6179651AF2C11D00FD7A2B /* FadeSegue.m */; };
+		AC6179691AF2C55100FD7A2B /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6179681AF2C55100FD7A2B /* UIImage+ImageEffects.m */; };
+		AC61796C1AF2C79500FD7A2B /* CounterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC61796B1AF2C79500FD7A2B /* CounterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,12 +55,25 @@
 		33A0B95A19B00B890028657B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33A0B95C19B00B890028657B /* ummViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ummViewController.h; sourceTree = "<group>"; };
 		33A0B95D19B00B890028657B /* ummViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ummViewController.m; sourceTree = "<group>"; };
-		33A0B95F19B00B890028657B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		33A0B96519B00B890028657B /* ummTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ummTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A0B96619B00B890028657B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		33A0B96E19B00B890028657B /* ummTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ummTests-Info.plist"; sourceTree = "<group>"; };
 		33A0B97019B00B890028657B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		33A0B97219B00B890028657B /* ummTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ummTests.m; sourceTree = "<group>"; };
+		AC6179551AF29DF900FD7A2B /* StopWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StopWatch.h; path = StopWatch/StopWatch.h; sourceTree = "<group>"; };
+		AC6179561AF29DF900FD7A2B /* StopWatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StopWatch.m; path = StopWatch/StopWatch.m; sourceTree = "<group>"; };
+		AC6179581AF29E5400FD7A2B /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "UmmApp/Launch Screen.xib"; sourceTree = "<group>"; };
+		AC61795A1AF29EF200FD7A2B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = UmmApp/Images.xcassets; sourceTree = "<group>"; };
+		AC61795E1AF2A22100FD7A2B /* ToolbarNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToolbarNavViewController.h; path = UmmApp/Nav/ToolbarNavViewController.h; sourceTree = "<group>"; };
+		AC61795F1AF2A22100FD7A2B /* ToolbarNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToolbarNavViewController.m; path = UmmApp/Nav/ToolbarNavViewController.m; sourceTree = "<group>"; };
+		AC6179611AF2BDE600FD7A2B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = UmmApp/HomeViewController.h; sourceTree = "<group>"; };
+		AC6179621AF2BDE600FD7A2B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = UmmApp/HomeViewController.m; sourceTree = "<group>"; };
+		AC6179641AF2C11D00FD7A2B /* FadeSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FadeSegue.h; path = UmmApp/FadeSegue.h; sourceTree = "<group>"; };
+		AC6179651AF2C11D00FD7A2B /* FadeSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FadeSegue.m; path = UmmApp/FadeSegue.m; sourceTree = "<group>"; };
+		AC6179671AF2C55100FD7A2B /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		AC6179681AF2C55100FD7A2B /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		AC61796A1AF2C79500FD7A2B /* CounterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CounterViewController.h; path = UmmApp/CounterViewController.h; sourceTree = "<group>"; };
+		AC61796B1AF2C79500FD7A2B /* CounterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CounterViewController.m; path = UmmApp/CounterViewController.m; sourceTree = "<group>"; };
 		DDC84A20AFF842B481B336BE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		FEA109D9BE264F329DC4A4BB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -118,12 +138,17 @@
 		33A0B94D19B00B890028657B /* umm */ = {
 			isa = PBXGroup;
 			children = (
-				33A0B95619B00B890028657B /* ummAppDelegate.h */,
-				33A0B95719B00B890028657B /* ummAppDelegate.m */,
+				AC61795D1AF2A20300FD7A2B /* Navigation */,
+				AC61796A1AF2C79500FD7A2B /* CounterViewController.h */,
+				AC61796B1AF2C79500FD7A2B /* CounterViewController.m */,
+				AC6179611AF2BDE600FD7A2B /* HomeViewController.h */,
+				AC6179621AF2BDE600FD7A2B /* HomeViewController.m */,
+				AC61795A1AF29EF200FD7A2B /* Images.xcassets */,
+				AC6179581AF29E5400FD7A2B /* Launch Screen.xib */,
 				33A0B95919B00B890028657B /* Main.storyboard */,
-				33A0B95C19B00B890028657B /* ummViewController.h */,
-				33A0B95D19B00B890028657B /* ummViewController.m */,
-				33A0B95F19B00B890028657B /* Images.xcassets */,
+				AC6179531AF29DC900FD7A2B /* Timer */,
+				AC61795C1AF29F1100FD7A2B /* Delegate */,
+				AC6179541AF29DD700FD7A2B /* Old */,
 				33A0B94E19B00B890028657B /* Supporting Files */,
 			);
 			path = umm;
@@ -132,6 +157,10 @@
 		33A0B94E19B00B890028657B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AC6179641AF2C11D00FD7A2B /* FadeSegue.h */,
+				AC6179651AF2C11D00FD7A2B /* FadeSegue.m */,
+				AC6179671AF2C55100FD7A2B /* UIImage+ImageEffects.h */,
+				AC6179681AF2C55100FD7A2B /* UIImage+ImageEffects.m */,
 				33A0B94F19B00B890028657B /* umm-Info.plist */,
 				33A0B95019B00B890028657B /* InfoPlist.strings */,
 				33A0B95319B00B890028657B /* main.m */,
@@ -156,6 +185,42 @@
 				33A0B96F19B00B890028657B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AC6179531AF29DC900FD7A2B /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				AC6179551AF29DF900FD7A2B /* StopWatch.h */,
+				AC6179561AF29DF900FD7A2B /* StopWatch.m */,
+			);
+			name = Timer;
+			sourceTree = "<group>";
+		};
+		AC6179541AF29DD700FD7A2B /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				33A0B95C19B00B890028657B /* ummViewController.h */,
+				33A0B95D19B00B890028657B /* ummViewController.m */,
+			);
+			name = Old;
+			sourceTree = "<group>";
+		};
+		AC61795C1AF29F1100FD7A2B /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				33A0B95619B00B890028657B /* ummAppDelegate.h */,
+				33A0B95719B00B890028657B /* ummAppDelegate.m */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
+		AC61795D1AF2A20300FD7A2B /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				AC61795E1AF2A22100FD7A2B /* ToolbarNavViewController.h */,
+				AC61795F1AF2A22100FD7A2B /* ToolbarNavViewController.m */,
+			);
+			name = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,9 +302,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33A0B96019B00B890028657B /* Images.xcassets in Resources */,
+				AC6179591AF29E5400FD7A2B /* Launch Screen.xib in Resources */,
 				33A0B95219B00B890028657B /* InfoPlist.strings in Resources */,
 				33A0B95B19B00B890028657B /* Main.storyboard in Resources */,
+				AC61795B1AF29EF200FD7A2B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,9 +357,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC6179691AF2C55100FD7A2B /* UIImage+ImageEffects.m in Sources */,
+				AC6179661AF2C11D00FD7A2B /* FadeSegue.m in Sources */,
 				33A0B95E19B00B890028657B /* ummViewController.m in Sources */,
+				AC61796C1AF2C79500FD7A2B /* CounterViewController.m in Sources */,
 				33A0B95819B00B890028657B /* ummAppDelegate.m in Sources */,
 				33A0B95419B00B890028657B /* main.m in Sources */,
+				AC6179571AF29DF900FD7A2B /* StopWatch.m in Sources */,
+				AC6179601AF2A22100FD7A2B /* ToolbarNavViewController.m in Sources */,
+				AC6179631AF2BDE600FD7A2B /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,8 +494,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "umm/umm-Prefix.pch";
 				INFOPLIST_FILE = "umm/umm-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -437,8 +510,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "umm/umm-Prefix.pch";
 				INFOPLIST_FILE = "umm/umm-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
