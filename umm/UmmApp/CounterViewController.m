@@ -7,6 +7,7 @@
 //
 
 #import "CounterViewController.h"
+#import "CounterButton.h"
 
 @interface CounterViewController ()
 
@@ -17,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(start) name:@"Start" object:nil];
+    
+    CounterButton * view = [[CounterButton alloc] initWithColor:[UIColor redColor] andWord:@"bacon"];
+    [self.view addSubview:view];
     // Do any additional setup after loading the view.
 }
 

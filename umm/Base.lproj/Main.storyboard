@@ -154,7 +154,7 @@
                                 <rect key="frame" x="247" y="260" width="94" height="29"/>
                             </stepper>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="2J1-8R-mgZ"/>

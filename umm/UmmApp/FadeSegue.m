@@ -16,7 +16,6 @@
     
     transition.duration = 0.15;
     transition.type = kCATransitionFade;
-    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
     
     UIViewController *destination = (UIViewController*) self.destinationViewController;
     UIViewController *source = (UIViewController*) self.sourceViewController;
@@ -41,13 +40,14 @@
     
     UIImageView* backView = [[UIImageView alloc] initWithFrame:source.view.frame];
     // Blur the image
-    UIImage *blur = [backgroundImage applyBlurWithRadius:5 tintColor:[UIColor colorWithWhite:0 alpha:0.2]
+    UIImage *blur = [backgroundImage applyBlurWithRadius:5 tintColor:[UIColor colorWithWhite:0.5 alpha:0.2]
                                    saturationDeltaFactor:1.3
                                                maskImage:nil];
     
     backView.image = blur;
     backView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
     [destination.view addSubview:backView];
+    [destination.view sendSubviewToBack:backView];
 }
 
 @end

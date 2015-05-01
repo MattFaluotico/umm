@@ -29,6 +29,8 @@
 		AC6179661AF2C11D00FD7A2B /* FadeSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6179651AF2C11D00FD7A2B /* FadeSegue.m */; };
 		AC6179691AF2C55100FD7A2B /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6179681AF2C55100FD7A2B /* UIImage+ImageEffects.m */; };
 		AC61796C1AF2C79500FD7A2B /* CounterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC61796B1AF2C79500FD7A2B /* CounterViewController.m */; };
+		AC6179701AF2CF0B00FD7A2B /* CounterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AC61796F1AF2CF0B00FD7A2B /* CounterButton.m */; };
+		AC6179721AF333A500FD7A2B /* CounterButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC6179711AF333A500FD7A2B /* CounterButton.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,9 @@
 		AC6179681AF2C55100FD7A2B /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		AC61796A1AF2C79500FD7A2B /* CounterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CounterViewController.h; path = UmmApp/CounterViewController.h; sourceTree = "<group>"; };
 		AC61796B1AF2C79500FD7A2B /* CounterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CounterViewController.m; path = UmmApp/CounterViewController.m; sourceTree = "<group>"; };
+		AC61796E1AF2CF0B00FD7A2B /* CounterButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CounterButton.h; path = UmmApp/CounterButton.h; sourceTree = "<group>"; };
+		AC61796F1AF2CF0B00FD7A2B /* CounterButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CounterButton.m; path = UmmApp/CounterButton.m; sourceTree = "<group>"; };
+		AC6179711AF333A500FD7A2B /* CounterButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CounterButton.xib; path = UmmApp/CounterButton.xib; sourceTree = "<group>"; };
 		DDC84A20AFF842B481B336BE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		FEA109D9BE264F329DC4A4BB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -138,12 +143,12 @@
 		33A0B94D19B00B890028657B /* umm */ = {
 			isa = PBXGroup;
 			children = (
+				AC61796D1AF2CE0900FD7A2B /* Components */,
 				AC61795D1AF2A20300FD7A2B /* Navigation */,
 				AC61796A1AF2C79500FD7A2B /* CounterViewController.h */,
 				AC61796B1AF2C79500FD7A2B /* CounterViewController.m */,
 				AC6179611AF2BDE600FD7A2B /* HomeViewController.h */,
 				AC6179621AF2BDE600FD7A2B /* HomeViewController.m */,
-				AC61795A1AF29EF200FD7A2B /* Images.xcassets */,
 				AC6179581AF29E5400FD7A2B /* Launch Screen.xib */,
 				33A0B95919B00B890028657B /* Main.storyboard */,
 				AC6179531AF29DC900FD7A2B /* Timer */,
@@ -157,10 +162,7 @@
 		33A0B94E19B00B890028657B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AC6179641AF2C11D00FD7A2B /* FadeSegue.h */,
-				AC6179651AF2C11D00FD7A2B /* FadeSegue.m */,
-				AC6179671AF2C55100FD7A2B /* UIImage+ImageEffects.h */,
-				AC6179681AF2C55100FD7A2B /* UIImage+ImageEffects.m */,
+				AC61795A1AF29EF200FD7A2B /* Images.xcassets */,
 				33A0B94F19B00B890028657B /* umm-Info.plist */,
 				33A0B95019B00B890028657B /* InfoPlist.strings */,
 				33A0B95319B00B890028657B /* main.m */,
@@ -221,6 +223,20 @@
 				AC61795F1AF2A22100FD7A2B /* ToolbarNavViewController.m */,
 			);
 			name = Navigation;
+			sourceTree = "<group>";
+		};
+		AC61796D1AF2CE0900FD7A2B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AC6179641AF2C11D00FD7A2B /* FadeSegue.h */,
+				AC6179651AF2C11D00FD7A2B /* FadeSegue.m */,
+				AC6179671AF2C55100FD7A2B /* UIImage+ImageEffects.h */,
+				AC6179681AF2C55100FD7A2B /* UIImage+ImageEffects.m */,
+				AC61796E1AF2CF0B00FD7A2B /* CounterButton.h */,
+				AC61796F1AF2CF0B00FD7A2B /* CounterButton.m */,
+				AC6179711AF333A500FD7A2B /* CounterButton.xib */,
+			);
+			name = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +322,7 @@
 				33A0B95219B00B890028657B /* InfoPlist.strings in Resources */,
 				33A0B95B19B00B890028657B /* Main.storyboard in Resources */,
 				AC61795B1AF29EF200FD7A2B /* Images.xcassets in Resources */,
+				AC6179721AF333A500FD7A2B /* CounterButton.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +376,7 @@
 			files = (
 				AC6179691AF2C55100FD7A2B /* UIImage+ImageEffects.m in Sources */,
 				AC6179661AF2C11D00FD7A2B /* FadeSegue.m in Sources */,
+				AC6179701AF2CF0B00FD7A2B /* CounterButton.m in Sources */,
 				33A0B95E19B00B890028657B /* ummViewController.m in Sources */,
 				AC61796C1AF2C79500FD7A2B /* CounterViewController.m in Sources */,
 				33A0B95819B00B890028657B /* ummAppDelegate.m in Sources */,
